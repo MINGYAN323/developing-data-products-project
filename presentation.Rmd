@@ -1,0 +1,44 @@
+---
+title: "mtcars 回归分析工具"
+author: "MINGYAN LI"
+date: "2026-03-13"
+output: ioslides_presentation
+---
+
+## 项目介绍
+
+- 目标：创建一个简单的 Shiny 应用，帮助用户探索 mtcars 数据集中变量之间的关系。
+- 功能：选择预测变量，动态展示线性回归结果和拟合图。
+- 数据：`mtcars` 数据集（1974 年 Motor Trend 杂志数据）。
+
+---
+
+## 应用界面
+
+左侧面板包含：
+- 使用说明
+- 预测变量选择下拉框
+
+右侧面板显示：
+- 回归模型摘要
+- 散点图与回归线
+
+---
+
+## 示例输入与输出
+
+以下是在 R 中静态模拟的示例（选择 `wt` 作为预测变量）：
+
+```{r, echo=FALSE, fig.width=6, fig.height=4}
+library(ggplot2)
+model <- lm(mpg ~ wt, data = mtcars)
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title = "mpg vs wt")
+
+summary(model)
+
+head(mtcars, 3)
+
+mean(mtcars$mpg)
