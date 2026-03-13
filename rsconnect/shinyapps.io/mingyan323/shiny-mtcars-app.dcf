@@ -1,0 +1,10 @@
+name: shiny-mtcars-app
+title:
+username: mingyan323
+account: mingyan323
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 16892935
+bundleId: 11704148
+url: https://mingyan323.shinyapps.io/shiny-mtcars-app/
+version: 1
